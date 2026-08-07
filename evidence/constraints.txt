@@ -1,0 +1,6 @@
+B5-1 constraint verification
+PASS | FK blocks missing member | FOREIGN KEY constraint failed
+PASS | UNIQUE blocks duplicate member email | UNIQUE constraint failed: members.email
+PASS | NOT NULL blocks missing category name | NOT NULL constraint failed: categories.name
+PASS | CHECK blocks invalid published year | CHECK constraint failed: published_year BETWEEN 1900 AND 2100
+PASS | FK definitions found | 3
