@@ -1,0 +1,92 @@
+schema_version: 1
+mission:
+  id: "B5-1"
+  title: "정보를 깔끔하게 정리하는 디지털 서랍장 만들기"
+
+control_tower:
+  repository: "MetaStudy999/codyssey-basic"
+  baseline_sha: "0d1581b3e82366988f57e1d76da311c028b8e15e"
+  drift: "NONE"
+
+mission_repository:
+  repository: "MetaStudy999/codyssey-basic-b5-1-database-design"
+  baseline_sha: "9daf13c4bd10507ca6cbbc9d3e0373fc7ea4588e"
+  final_commit_sha: "433236beb75cae28eec941a82a56a79b994efc62"
+  pull_request: "https://github.com/MetaStudy999/codyssey-basic-b5-1-database-design/pull/1"
+  merge_status: "MERGED"
+
+source:
+  mode: "FULL_SOURCE"
+  confidence: "MEDIUM"
+  mission_source:
+    state: "VALID"
+    location: "b5-1-mission.pdf"
+  evaluation_source:
+    state: "VALID"
+    location: "b5-1-evaluation.md"
+  gaps:
+    - "별도 Evaluation PDF/raw artifact는 발견되지 않음; 실질 평가문항 Markdown을 기준으로 수행"
+
+execution:
+  status: "NEEDS-RUNTIME"
+  learning: "NOT-STUDIED"
+  current_gate: "G8_MERGE"
+  verdict: "NEEDS-RUNTIME"
+
+gates:
+  G1_SOURCE: "PASS"
+  G2_BUILD: "PASS"
+  G3_TEST: "PASS"
+  G4_REVIEW: "PASS"
+  G5_RUNTIME: "NEEDS-RUNTIME"
+  G6_EVIDENCE: "PASS"
+  G7_LEARN: "PASS"
+  G8_MERGE: "PASS"
+
+requirements:
+  confirmed: 14
+  passed: 13
+  partial: 1
+  failed: 0
+  unverified: 0
+
+validation:
+  tests: "PASS"
+  commands:
+    - "python3 scripts/verify.py"
+  blocker: 0
+  major: 0
+  minor: 0
+
+runtime:
+  required: true
+  owner: "HUMAN"
+  result: "NEEDS_RUNTIME"
+  notes: "SQLite schema/seed/query/constraint runtime is PASS. Only the user's oral explanation/mastery for Evaluation items 2-4 remains human runtime."
+
+evidence:
+  complete: true
+  locations:
+    - "evidence/verification-summary.txt"
+    - "evidence/row-counts.txt"
+    - "evidence/constraints.txt"
+    - "evidence/query-results.txt"
+    - "evidence/self-review.md"
+    - "docs/learning-notes.md"
+  missing: []
+
+dependency:
+  state: "NONE"
+  related_missions: []
+
+risks:
+  - "User oral evaluation has not been performed; do not mark learning MASTERED or full runtime PASS."
+backlog:
+  - "Optional Mission bonus items and optional ERD image were intentionally not added because they are not required for completion."
+
+representative_integration:
+  required: true
+  status: "PENDING"
+  requested_updates:
+    - "config/missions.yaml"
+  generated_outputs_direct_edit: false
