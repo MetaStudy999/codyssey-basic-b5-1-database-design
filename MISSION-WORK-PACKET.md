@@ -251,7 +251,7 @@ B5-1
 | G5 RUNTIME | SQLite 실제 실행 완료; oral mastery는 정확히 분리 | NEEDS-RUNTIME |
 | G6 EVIDENCE | 필수 evidence 저장 | PASS |
 | G7 LEARN | 평가 설명용 학습자료 완료 | PASS |
-| G8 MERGE | PR/merge 완료 | TODO |
+| G8 MERGE | PR/merge 완료 | PASS |
 
 ### G4 Review Result
 
@@ -262,10 +262,18 @@ B5-1
 - Actual SQLite verification: exit code 0
 - Human-only gap: oral explanation/mastery
 
+### G8 Merge Result
+
+- Pull Request: `#1`
+- Merge method: squash
+- Implementation merge commit: `433236beb75cae28eec941a82a56a79b994efc62`
+- `HANDOFF.md`, `mission-result.yaml`: 작성 완료
+- Control Tower: 수정하지 않음
+
 ## 17. STOP Rule
 
 공식 필수 Requirement 충족, 평가 artifact 준비, BLOCKER=0, MAJOR=0, SQL 실행 테스트와 Evidence 완료, PR merge 완료 시 종료한다. Oral mastery 자체는 Repository가 대신 증명할 수 없으므로 학습 자료까지만 준비하고 실제 평가는 사람에게 남긴다.
 
 ## 18. Handoff Contract
 
-종료 시 `HANDOFF.md`, `mission-result.yaml`을 작성한다. Control Tower는 수정하지 않는다.
+`HANDOFF.md`, `mission-result.yaml` 작성 완료. 대표 Repository는 수정하지 않았으며 Serial Integration 단계로 결과를 전달한다.
