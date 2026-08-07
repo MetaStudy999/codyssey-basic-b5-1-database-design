@@ -62,27 +62,27 @@
 
 ### Required Deliverables
 
-- [ ] schema 생성 SQL 1개
-- [ ] sample INSERT SQL 1개
-- [ ] 핵심 query 15개 SQL 1개
-- [ ] query별 실행 결과 text evidence
-- [ ] 최소 4개 table, 각 table PK
-- [ ] 최소 2개 이상의 FK 기반 1:N
-- [ ] 각 table 10행 이상의 의미 있는 sample data
+- [x] schema 생성 SQL 1개
+- [x] sample INSERT SQL 1개
+- [x] 핵심 query 15개 SQL 1개
+- [x] query별 실행 결과 text evidence
+- [x] 최소 4개 table, 각 table PK
+- [x] 최소 2개 이상의 FK 기반 1:N
+- [x] 각 table 10행 이상의 의미 있는 sample data
 
 ### Required Functions / Behaviors
 
-- [ ] `NOT NULL` 최소 1개
-- [ ] `UNIQUE` 최소 1개
-- [ ] 실제 FK 위반 입력 차단
-- [ ] 기본 조회 4개 이상 (`WHERE`, `ORDER BY`, `LIMIT` 포함)
-- [ ] JOIN 4개 이상 (`INNER JOIN` 2+, `LEFT JOIN` 1+)
-- [ ] 집계 3개 이상 (`COUNT`, `SUM`, `AVG` 중 2+ 및 `GROUP BY`)
-- [ ] subquery 1개 이상
-- [ ] `UPDATE` / `DELETE` 2개 이상
-- [ ] `CREATE INDEX` 1개 이상 + 적용 이유
-- [ ] 각 query 목적 1줄 + 실제 결과
-- [ ] DB 전용 문법 사용 시 주석으로 명시
+- [x] `NOT NULL` 최소 1개
+- [x] `UNIQUE` 최소 1개
+- [x] 실제 FK 위반 입력 차단
+- [x] 기본 조회 4개 이상 (`WHERE`, `ORDER BY`, `LIMIT` 포함)
+- [x] JOIN 4개 이상 (`INNER JOIN` 2+, `LEFT JOIN` 1+)
+- [x] 집계 3개 이상 (`COUNT`, `SUM`, `AVG` 중 2+ 및 `GROUP BY`)
+- [x] subquery 1개 이상
+- [x] `UPDATE` / `DELETE` 2개 이상
+- [x] `CREATE INDEX` 1개 이상 + 적용 이유
+- [x] 각 query 목적 1줄 + 실제 결과
+- [x] DB 전용 문법 사용 시 주석으로 명시
 
 ### Constraints
 
@@ -105,40 +105,40 @@
 
 | ID | Requirement | Source | Location | Implementation | Test / Evidence | Status |
 |---|---|---|---|---|---|---|
-| REQ-001 | 4개 이상 table + 각 PK | Mission PDF/MD | 기능 요구 2 | `sql/01_schema.sql` | `evidence/verification-summary.txt` | TODO |
-| REQ-002 | FK 2+로 1:N 2+ | Mission PDF/MD | 기능 요구 2 | `sql/01_schema.sql` | FK inventory/constraint test | TODO |
-| REQ-003 | NOT NULL/UNIQUE/FK 실효성 | Mission PDF/MD | 기능 요구 3 | `sql/01_schema.sql` | `evidence/constraints.txt` | TODO |
-| REQ-004 | table별 10행+ seed | Mission PDF/MD | 기능 요구 4 | `sql/02_seed.sql` | `evidence/row-counts.txt` | TODO |
-| REQ-005 | 기본 조회 4+ | Mission/Eval | SQL query 15 | Q01-Q04 | query evidence | TODO |
-| REQ-006 | JOIN 4+, INNER 2+, LEFT 1+ | Mission/Eval | SQL query 15 | Q05-Q08 | query evidence | TODO |
-| REQ-007 | 집계 3+ | Mission/Eval | SQL query 15 | Q09-Q11 | query evidence | TODO |
-| REQ-008 | subquery 1+ | Mission/Eval | SQL query 15 | Q12 | query evidence | TODO |
-| REQ-009 | UPDATE/DELETE 2+ | Mission/Eval | SQL query 15 | Q13-Q14 | query evidence | TODO |
-| REQ-010 | index 1+ + 이유 | Mission/Eval | SQL query 15 | Q15 | index + query plan evidence | TODO |
-| REQ-011 | query별 목적/실행 결과 | Mission/Eval | 결과 확인 자료 | `sql/03_queries.sql` | `evidence/query-results.txt` | TODO |
-| REQ-012 | SQL-only / framework 금지 | Mission PDF/MD | 제약 사항 | SQL + stdlib 검증 script | repo inventory | TODO |
-| REQ-013 | DB 전용 문법 주석 | Mission PDF/MD | DB 환경 준비 | SQLite PRAGMA/index note | source review | TODO |
-| REQ-014 | 학습 설명 준비 | Mission/Eval | 과제 목표/평가 2~4 | `docs/learning-notes.md` | human oral check optional | TODO |
+| REQ-001 | 4개 이상 table + 각 PK | Mission PDF/MD | 기능 요구 2 | `sql/01_schema.sql` | `evidence/verification-summary.txt` | PASS |
+| REQ-002 | FK 2+로 1:N 2+ | Mission PDF/MD | 기능 요구 2 | `sql/01_schema.sql` | FK inventory/constraint test | PASS |
+| REQ-003 | NOT NULL/UNIQUE/FK 실효성 | Mission PDF/MD | 기능 요구 3 | `sql/01_schema.sql` | `evidence/constraints.txt` | PASS |
+| REQ-004 | table별 10행+ seed | Mission PDF/MD | 기능 요구 4 | `sql/02_seed.sql` | `evidence/row-counts.txt` | PASS |
+| REQ-005 | 기본 조회 4+ | Mission/Eval | SQL query 15 | Q01-Q04 | query evidence | PASS |
+| REQ-006 | JOIN 4+, INNER 2+, LEFT 1+ | Mission/Eval | SQL query 15 | Q05-Q08 | query evidence | PASS |
+| REQ-007 | 집계 3+ | Mission/Eval | SQL query 15 | Q09-Q11 | query evidence | PASS |
+| REQ-008 | subquery 1+ | Mission/Eval | SQL query 15 | Q12 | query evidence | PASS |
+| REQ-009 | UPDATE/DELETE 2+ | Mission/Eval | SQL query 15 | Q13-Q14 | query evidence | PASS |
+| REQ-010 | index 1+ + 이유 | Mission/Eval | SQL query 15 | Q15 | index + query plan evidence | PASS |
+| REQ-011 | query별 목적/실행 결과 | Mission/Eval | 결과 확인 자료 | `sql/03_queries.sql` | `evidence/query-results.txt` | PASS |
+| REQ-012 | SQL-only / framework 금지 | Mission PDF/MD | 제약 사항 | SQL + stdlib 검증 script | repo inventory | PASS |
+| REQ-013 | DB 전용 문법 주석 | Mission PDF/MD | DB 환경 준비 | SQLite PRAGMA/index note | source review | PASS |
+| REQ-014 | 학습 설명 준비 | Mission/Eval | 과제 목표/평가 2~4 | `docs/learning-notes.md` | human oral check optional | NEEDS-RUNTIME |
 
 ## 7. Evaluation Mapping
 
 | Evaluation ID | Criterion | Validation | Evidence | Status |
 |---|---|---|---|---|
-| EVA-01 | 4 tables + PK | schema introspection | verification summary | TODO |
-| EVA-02 | FK 1:N 2+ + invalid ref blocked | FK inventory + failing insert | constraints | TODO |
-| EVA-03 | each table 10+ rows | row count | row-counts | TODO |
-| EVA-04 | required 15-query category mix | marker/category audit + execution | query-results | TODO |
-| EVA-05 | all query results attached | captured execution output | query-results | TODO |
-| EVA-06 | explain table split/roles | learning notes | docs | TODO |
-| EVA-07 | explain 1:N domain meaning | learning notes/ER diagram | docs | TODO |
-| EVA-08 | explain column types | learning notes | docs | TODO |
-| EVA-09 | explain index column/reason | Q15 + learning notes | query-results/docs | TODO |
-| EVA-10 | DB vs Excel explanation | learning notes | docs | TODO |
-| EVA-11 | PK/FK and 1:N explanation | learning notes | docs | TODO |
-| EVA-12 | INNER vs LEFT JOIN | Q05-Q08 + learning notes | evidence/docs | TODO |
-| EVA-13 | GROUP BY/COUNT/SUM/AVG | Q09-Q11 + learning notes | evidence/docs | TODO |
-| EVA-14 | explain most complex query | Q10 walkthrough | docs | TODO |
-| EVA-15 | difficulty and resolution | learning notes | docs | TODO |
+| EVA-01 | 4 tables + PK | schema introspection | verification summary | PASS |
+| EVA-02 | FK 1:N 2+ + invalid ref blocked | FK inventory + failing insert | constraints | PASS |
+| EVA-03 | each table 10+ rows | row count | row-counts | PASS |
+| EVA-04 | required 15-query category mix | marker/category audit + execution | query-results | PASS |
+| EVA-05 | all query results attached | captured execution output | query-results | PASS |
+| EVA-06 | explain table split/roles | learning notes | docs | NEEDS-RUNTIME |
+| EVA-07 | explain 1:N domain meaning | learning notes/ER diagram | docs | NEEDS-RUNTIME |
+| EVA-08 | explain column types | learning notes | docs | NEEDS-RUNTIME |
+| EVA-09 | explain index column/reason | Q15 + learning notes | query-results/docs | NEEDS-RUNTIME |
+| EVA-10 | DB vs Excel explanation | learning notes | docs | NEEDS-RUNTIME |
+| EVA-11 | PK/FK and 1:N explanation | learning notes | docs | NEEDS-RUNTIME |
+| EVA-12 | INNER vs LEFT JOIN | Q05-Q08 + learning notes | evidence/docs | NEEDS-RUNTIME |
+| EVA-13 | GROUP BY/COUNT/SUM/AVG | Q09-Q11 + learning notes | evidence/docs | NEEDS-RUNTIME |
+| EVA-14 | explain most complex query | Q10 walkthrough | docs | NEEDS-RUNTIME |
+| EVA-15 | difficulty and resolution | learning notes | docs | NEEDS-RUNTIME |
 
 ## 8. Repository Baseline
 
@@ -214,44 +214,53 @@ B5-1
 
 | Test | Method | Expected | Status |
 |---|---|---|---|
-| clean schema rebuild | `python3 scripts/verify.py` | no SQL error | TODO |
-| table/PK inventory | sqlite metadata | 4 tables, PK each | TODO |
-| FK inventory | `PRAGMA foreign_key_list` | 3 FK definitions | TODO |
-| constraints | intentional invalid INSERT | FK/UNIQUE/NOT NULL/CHECK blocked | TODO |
-| seed row counts | `COUNT(*)` | all >=10 | TODO |
-| query set | Q01-Q15 execution | all succeed | TODO |
-| update/delete | postconditions | changed/deleted as intended | TODO |
-| index | sqlite_master/query plan | index exists and is used | TODO |
+| clean schema rebuild | `python3 scripts/verify.py` | no SQL error | PASS |
+| table/PK inventory | sqlite metadata | 4 tables, PK each | PASS |
+| FK inventory | `PRAGMA foreign_key_list` | 3 FK definitions | PASS |
+| constraints | intentional invalid INSERT | FK/UNIQUE/NOT NULL/CHECK blocked | PASS |
+| seed row counts | `COUNT(*)` | all >=10 | PASS |
+| query set | Q01-Q15 execution | all succeed | PASS |
+| update/delete | postconditions | changed/deleted as intended | PASS |
+| index | sqlite_master/query plan | index exists and is used | PASS |
 
 ## 14. Runtime Plan
 
 | Runtime Check | AI 가능 | Human 필요 | Evidence | Status |
 |---|---|---|---|---|
-| SQLite schema/seed/query execution | YES | NO | `evidence/*.txt` | TODO |
+| SQLite schema/seed/query execution | YES | NO | `evidence/*.txt` | PASS |
 | oral explanation/mastery | NO | YES at evaluation time | `docs/learning-notes.md` prep | NEEDS-RUNTIME |
 
 ## 15. Evidence Plan
 
 | Evidence | Requirement / Evaluation | Location | Status |
 |---|---|---|---|
-| verification summary | REQ-001~013 | `evidence/verification-summary.txt` | TODO |
-| row counts | REQ-004/EVA-03 | `evidence/row-counts.txt` | TODO |
-| constraint violations | REQ-003/EVA-02 | `evidence/constraints.txt` | TODO |
-| Q01-Q15 outputs | REQ-005~011/EVA-04~05 | `evidence/query-results.txt` | TODO |
-| learning explanations | EVA-06~15 | `docs/learning-notes.md` | TODO |
+| verification summary | REQ-001~013 | `evidence/verification-summary.txt` | PASS |
+| row counts | REQ-004/EVA-03 | `evidence/row-counts.txt` | PASS |
+| constraint violations | REQ-003/EVA-02 | `evidence/constraints.txt` | PASS |
+| Q01-Q15 outputs | REQ-005~011/EVA-04~05 | `evidence/query-results.txt` | PASS |
+| learning explanations | EVA-06~15 | `docs/learning-notes.md` | PASS |
 
 ## 16. Completion Gates
 
 | Gate | Exit Condition | Status |
 |---|---|---|
 | G1 SOURCE | Source 상태/Mode/Gap/requirements 확정 | PASS |
-| G2 BUILD | 필수 SQL/docs/verifier 구현 | TODO |
-| G3 TEST | clean SQLite verification 통과 | TODO |
-| G4 REVIEW | BLOCKER=0, MAJOR=0 | TODO |
-| G5 RUNTIME | SQLite 실제 실행 완료; oral mastery는 정확히 분리 | TODO |
-| G6 EVIDENCE | 필수 evidence 저장 | TODO |
-| G7 LEARN | 평가 설명용 학습자료 완료 | TODO |
+| G2 BUILD | 필수 SQL/docs/verifier 구현 | PASS |
+| G3 TEST | clean SQLite verification 통과 | PASS |
+| G4 REVIEW | BLOCKER=0, MAJOR=0 | PASS |
+| G5 RUNTIME | SQLite 실제 실행 완료; oral mastery는 정확히 분리 | NEEDS-RUNTIME |
+| G6 EVIDENCE | 필수 evidence 저장 | PASS |
+| G7 LEARN | 평가 설명용 학습자료 완료 | PASS |
 | G8 MERGE | PR/merge 완료 | TODO |
+
+### G4 Review Result
+
+- Self review: 1회 완료 (`evidence/self-review.md`)
+- Independent reviewer: current toolset에서 별도 reviewer 미사용
+- BLOCKER: 0
+- MAJOR: 0
+- Actual SQLite verification: exit code 0
+- Human-only gap: oral explanation/mastery
 
 ## 17. STOP Rule
 
