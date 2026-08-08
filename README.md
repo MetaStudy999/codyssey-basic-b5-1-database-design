@@ -50,6 +50,7 @@ books      1 ─── N rentals
 ├── b5-1-mission.md
 ├── b5-1-mission.pdf
 ├── docs/
+│   ├── evaluation-qa.md
 │   └── learning-notes.md
 ├── evidence/
 │   ├── constraints.txt
@@ -122,18 +123,26 @@ SQLite에서는 연결마다 FK enforcement가 필요하므로 SQL 파일과 ver
 
 ## 평가 설명 준비
 
-`docs/learning-notes.md`에서 다음을 현재 구현 기준으로 설명합니다.
+평가 준비 자료를 두 단계로 제공합니다.
+
+1. [`docs/learning-notes.md`](./docs/learning-notes.md) — 현재 구현의 핵심 개념과 설계 흐름
+2. [`docs/evaluation-qa.md`](./docs/evaluation-qa.md) — 공식 평가항목을 커버하는 질문·전문 모범답안 + 보충 심화 질문
+
+주요 설명 범위:
 
 - DB와 Excel의 차이
-- table 분리 이유
+- table 분리 이유와 역할
 - PK/FK/1:N
-- column type 선택
+- column type 및 constraint 선택
 - INNER JOIN vs LEFT JOIN
 - GROUP BY / COUNT / SUM / AVG
 - subquery
-- index 선택 이유
+- UPDATE/DELETE postcondition
+- index 선택 이유와 `EXPLAIN QUERY PLAN`
 - 가장 복잡한 query(Q10) 풀이
 - 미션 중 어려웠던 부분과 해결 방법
+
+`evaluation-qa.md`의 보충 질문은 이해도 향상을 위한 학습 자료이며 새로운 공식 요구사항으로 취급하지 않습니다.
 
 ## Source
 
@@ -141,6 +150,7 @@ SQLite에서는 연결마다 FK enforcement가 필요하므로 SQL 파일과 ver
 - [Mission Markdown](./b5-1-mission.md)
 - [Evaluation](./b5-1-evaluation.md)
 - [Mission Work Packet](./MISSION-WORK-PACKET.md)
+- [평가 질문·모범답안](./docs/evaluation-qa.md)
 
 ## Scope
 

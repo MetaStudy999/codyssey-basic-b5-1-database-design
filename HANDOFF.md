@@ -40,7 +40,7 @@ Repository 구현·SQLite 실제 검증·필수 결과 Evidence·PR merge는 완
 | G4 REVIEW | PASS | `evidence/self-review.md`, BLOCKER=0, MAJOR=0 |
 | G5 RUNTIME | NEEDS-RUNTIME | SQLite runtime PASS; 사용자 구두 설명은 평가 시 확인 필요 |
 | G6 EVIDENCE | PASS | `evidence/*.txt` |
-| G7 LEARN | PASS | `docs/learning-notes.md` 작성 완료; 실제 사용자 학습은 별도 |
+| G7 LEARN | PASS | `docs/learning-notes.md`, `docs/evaluation-qa.md` 작성 완료; 실제 사용자 학습은 별도 |
 | G8 MERGE | PASS | PR #1 squash merge 완료 |
 
 ## 5. Requirement Summary
@@ -109,9 +109,10 @@ PASS | final rentals rows=17
 - `scripts/verify.py` — clean DB 재구축·constraint·query·index 검증
 - `evidence/*` — 실제 SQLite 실행 결과
 - `docs/learning-notes.md` — 평가 설명용 구현 기반 학습 자료
+- `docs/evaluation-qa.md` — 공식 평가항목 대응 질문·전문 모범답안과 보충 심화 질문
 - `MISSION-WORK-PACKET.md` — Source/Requirement/Evaluation/Gate 추적
 - `AGENTS.md` — B5-1 범위와 STOP/검증 규칙
-- `README.md` — 실행/구조/요구 대응 문서
+- `README.md` — 실행/구조/요구/평가 학습자료 연결 문서
 
 ### Architecture / Behavior Change
 
@@ -120,7 +121,9 @@ PASS | final rentals rows=17
 ## 10. Learning
 
 - Key Concepts Prepared: relational model, table separation, PK/FK, 1:N, constraints, JOIN, GROUP BY, aggregate, subquery, UPDATE/DELETE, index
-- Explainable Material: `docs/learning-notes.md`
+- Explainable Material:
+  - `docs/learning-notes.md` — 개념·구현 중심 학습 노트
+  - `docs/evaluation-qa.md` — 평가 질문·모범답안 중심 실전 대비 자료
 - Remaining Learning Gap: 사용자가 자료를 직접 연습하고 평가 시 자기 말로 설명해야 함
 
 ## 11. Risks / Backlog
@@ -128,7 +131,7 @@ PASS | final rentals rows=17
 - Required before representative integration: `NONE` — 대표 repo에는 `NEEDS-RUNTIME` 상태를 그대로 반영하면 됨
 - Advanced / Optional backlog: Mission bonus/ERD screenshot은 필수 완료를 지연시키지 않으므로 미실시
 - Cross-Mission conflict: `NONE`
-- Control Tower Drift: `NONE` — frozen baseline 유지, Control Tower 미수정
+- Control Tower Drift: `NONE` — frozen baseline은 Workcell 구현 기준으로 유지
 
 ## 12. Representative Repository Integration Request
 
@@ -154,3 +157,14 @@ python3 scripts/verify.py
 ## 14. Final Handoff Statement
 
 B5-1 Repository의 필수 SQL 구현, 실제 SQLite 검증, Evidence, 학습 자료, PR merge는 완료되었고 BLOCKER=0/MAJOR=0이다. 대표 Repository에는 **구현 완료 + 사용자 구두 설명만 NEEDS-RUNTIME** 상태로 직렬 통합할 수 있다.
+
+## 15. Post-completion Learning Augmentation
+
+사용자 요청에 따라 평가 대비 자료를 추가 보강했다.
+
+- `docs/evaluation-qa.md`: 공식 평가문항을 현재 구현과 실제 Evidence에 연결한 질문·전문 모범답안
+- Q01~Q16: 공식 평가영역 직접 커버
+- Q17~Q21: 이해도 향상을 위한 보충 심화 질문이며 새로운 공식 요구사항이 아님
+- README에서 평가 자료 진입점을 추가함
+
+이 추가 작업은 SQL 구현이나 Gate 판정을 변경하지 않으며, Human Runtime에 필요한 구두 설명 준비 품질을 높이기 위한 학습 보강이다.
