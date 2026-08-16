@@ -1,5 +1,0 @@
-B5-1 row counts after clean seed
-PASS | categories | 10 rows (minimum 10)
-PASS | members | 12 rows (minimum 10)
-PASS | books | 15 rows (minimum 10)
-PASS | rentals | 18 rows (minimum 10)
