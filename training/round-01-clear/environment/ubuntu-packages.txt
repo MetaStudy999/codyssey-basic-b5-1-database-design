@@ -1,0 +1,2 @@
+# B5-1 — Ubuntu 24.04 mission-specific APT packages
+sqlite3
